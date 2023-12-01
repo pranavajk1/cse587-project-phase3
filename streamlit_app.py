@@ -107,25 +107,21 @@ st.write(
 )
 
 
-icon("🎪")
+icon("✈️")
 """
-# Sentiment Analysis
+# Airline Sentiment Analysis
 
-[![](https://img.shields.io/github/stars/jrieke/components-hub?style=social)](https://github.com/jrieke/components-hub) &nbsp; [![](https://img.shields.io/twitter/follow/jrieke?style=social)](https://twitter.com/jrieke)
+[![](https://img.shields.io/badge/github-pranavajk1%2Fcse587--project--phase3-blue.svg?style=for-the-badge&logo=github)](https://github.com/pranavajk1/cse587-project-phase3) &nbsp;
 """
 
 
 description_text = """
-Discover {} Streamlit components! Most information on this page is 
-automatically crawled from Github, PyPI, and the 
-[Streamlit forum](https://discuss.streamlit.io/t/streamlit-components-community-tracker/4634).
-If you build your own [custom component](https://docs.streamlit.io/library/components/create), 
-it should appear here within a few days.
+The objective of the problem is to identify the sentiment i.e., classify an airline review into positive, negative or neutral based on keywords in the sentence.
 """
 description = st.empty()
 description.write(description_text.format("all"))
 col1, col2, col3 = st.columns([3, 2, 1])
-airline_review = col1.text_input("Enter whatever Text you want", placeholder='e.g. "image" or "text" or "card"')
+airline_review = col1.text_input("What do you think of the last flight you flew?", placeholder='e.g. This airline sucks 😫')
 
 model = col2.selectbox(
     "Select Machine Learning Model", ['Multinomial Naive Bayes', 'Logistic', 'Linear SVM', 'ANN', 'RNN', 'LSTM']
