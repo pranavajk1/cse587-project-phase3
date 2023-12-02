@@ -11,6 +11,8 @@ pypistats = "*"
 markdownlit = "*"
 pyyaml = "*"
 streamlit-pills = "==0.3.0"
+emoji = "*"
+pandas = "*"
 
 [dev-packages]
 watchdog = "*"
