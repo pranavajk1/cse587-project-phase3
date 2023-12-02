@@ -1,17 +1,12 @@
-import re
-import time
+from io import StringIO
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import List
 from PIL import Image
-import httpx
-import pypistats
-import requests
 import streamlit as st
-import yaml
-from bs4 import BeautifulSoup
-from markdownlit import mdlit
-from stqdm import stqdm
+import pandas as pd
+
+from ml import preprocess
 
 # from streamlit_dimensions import st_dimensions
 from streamlit_pills import pills
@@ -135,6 +130,23 @@ if col3.button("Analyze"):
         elif model == "Logistic":
             st.write("This is a negative review")
 
+
+st.write("")
+st.write("")
+co1, co2, co3 = st.columns([3, 2, 1])
+uploaded_file = co1.file_uploader("Upload reviews in a CSV file")
+model = co2.selectbox(
+    "Select Machine Learning Model for Files", ['Multinomial Naive Bayes', 'Logistic', 'Linear SVM', 'ANN', 'RNN', 'LSTM']
+)
+co3.write("")
+co3.write("")
+if co3.button('Analyze File'):
+    if uploaded_file is not None:
+        sentiment_data = pd.read_csv(uploaded_file)
+        sentiment_data_preprocessed =  preprocess(sentiment_data)
+        st.download_button('Download CSV', sentiment_data_preprocessed.to_csv(), 'text/csv')
+    else:
+        st.empty()
 
 # if "screen_width" in st.session_state and st.session_state.screen_width < 768:
 st.write("")

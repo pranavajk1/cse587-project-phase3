@@ -5,3 +5,5 @@ pypistats==1.1.0
 markdownlit==0.0.5
 pyyaml==6.0
 streamlit-pills==0.3.0
+pandas==2.0.3
+emoji==2.8.0
