@@ -6,7 +6,7 @@ from PIL import Image
 import streamlit as st
 import pandas as pd
 
-from ml import preprocess
+from ml import preprocess, preprocess_text, preprocess_text_nn, predict_text
 
 # from streamlit_dimensions import st_dimensions
 from streamlit_pills import pills
@@ -125,11 +125,8 @@ col3.write("")
 col3.write("")
 if col3.button("Analyze"):
     if airline_review:
-        if model == "Multinomial Naive Bayes":
-            st.write("This is a positive review")
-        elif model == "Logistic":
-            st.write("This is a negative review")
-
+        prediction = predict_text(airline_review, model)
+        st.write(prediction)
 
 st.write("")
 st.write("")

@@ -13,6 +13,9 @@ pyyaml = "*"
 streamlit-pills = "==0.3.0"
 emoji = "*"
 pandas = "*"
+tensorflow = "*"
+sklearn = "*"
+nltk = "*"
 
 [dev-packages]
 watchdog = "*"
