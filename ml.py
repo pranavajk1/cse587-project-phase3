@@ -60,13 +60,13 @@ def preprocess_text_nn(text):
   return padded_sequences
 
 
-ann_model = tf.keras.models.load_model('./models/ann.h5')
-rnn_model = tf.keras.models.load_model('./models/rnn.h5')
-lstm_model = tf.keras.models.load_model('./models/lstm.h5')
+ann_model = tf.keras.models.load_model('./models/ann_model.h5')
+rnn_model = tf.keras.models.load_model('./models/rnn_model.h5')
+lstm_model = tf.keras.models.load_model('./models/lstm_model.h5')
 
-multinomial_nb = joblib.load('./models/multinomial_naive_bayes.pkl')
-logistic_regression = joblib.load('./models/logistic_regression.pkl')
-linear_svm = joblib.load('./models/linear_svm.pkl')
+multinomial_nb = joblib.load('./models/multinomial_naive_bayes_model.pkl')
+logistic_regression = joblib.load('./models/logistic_regression_model.pkl')
+linear_svm = joblib.load('./models/linear_svm_model.pkl')
 
 def predict_text(text, model):
   if model not in ['Multinomial Naive Bayes', 'Logistic', 'Linear SVM']:

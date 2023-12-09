@@ -9,7 +9,7 @@ import pandas as pd
 from ml import preprocess, preprocess_text, preprocess_text_nn, predict_text
 
 # from streamlit_dimensions import st_dimensions
-from streamlit_pills import pills
+# from streamlit_pills import pills
 
 # from streamlit_profiler import Profiler
 
