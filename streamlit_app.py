@@ -102,9 +102,9 @@ st.write(
 )
 
 
-icon("✈️")
+st.image("./9850903.png")
 """
-# Airline Sentiment Analysis
+# Sentiment Analysis
 
 [![](https://img.shields.io/badge/github-pranavajk1%2Fcse587--project--phase3-blue.svg?style=for-the-badge&logo=github)](https://github.com/pranavajk1/cse587-project-phase3) &nbsp;
 """
@@ -116,7 +116,7 @@ The objective of the problem is to identify the sentiment i.e., classify an airl
 description = st.empty()
 description.write(description_text.format("all"))
 col1, col2, col3 = st.columns([3, 2, 1])
-airline_review = col1.text_input("What do you think of the last flight you flew?", placeholder='e.g. This airline sucks 😫')
+airline_review = col1.text_input("Type in your review, and I'll tell if it is positive or negative", placeholder='e.g. This sucks 😫')
 
 model = col2.selectbox(
     "Select Machine Learning Model", ['Multinomial Naive Bayes', 'Logistic', 'Linear SVM', 'ANN', 'RNN', 'LSTM']
@@ -126,7 +126,7 @@ col3.write("")
 if col3.button("Analyze"):
     if airline_review:
         prediction = predict_text(airline_review, model)
-        st.write(prediction)
+        st.write(f"Predicted sentiment: {prediction}")
 
 st.write("")
 st.write("")
